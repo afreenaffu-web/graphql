@@ -4,7 +4,7 @@ exports.typeDefs=gql`
 type Tweet {
     id: ID!
     body: String
-    date: Int
+    date: String
     author_id:Int
     Author:User
     Stat:Stat
@@ -32,7 +32,10 @@ type Tweet {
     retweets: Int
     responses: Int
  }
- 
+ type Mutation {
+  createTweet(body: String): Tweet
+  deleteTweet(id: ID!): Boolean!
+}
  
  
  
